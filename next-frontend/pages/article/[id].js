@@ -1,4 +1,4 @@
-import { url } from "../../config/next.config";
+import { url, apiToken } from "../../config/next.config";
 import ReactMarkdown from "react-markdown";
 
 
@@ -18,7 +18,12 @@ export default function Article({ article }) {
 }
 
 export async function getStaticProps(context) {
-  const data = await fetch(`${url}/api/articles/${context.params.id}`);
+  const data = await fetch(`${url}/api/articles/${context.params.id}`, {
+    headers: {
+      Authorization:
+      `Bearer ${apiToken}`,
+    },
+  });
   const article = await data.json();
 
   return {
@@ -29,7 +34,12 @@ export async function getStaticProps(context) {
 
 export async function getStaticPaths() {
   // Call an external API endpoint to get posts
-  const res = await fetch(`${url}/api/articles`);
+  const res = await fetch(`${url}/api/articles`, {
+    headers: {
+      Authorization:
+      `Bearer ${apiToken}`,
+    },
+  });
   const articles = await res.json();
 
   console.log('articles : ', articles)
