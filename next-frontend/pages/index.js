@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
-import { url } from "../config/next.config";
+import { url, apiToken } from "../config/next.config";
 
 export default function Home({ list }) {
   console.log(list);
@@ -25,7 +25,12 @@ export default function Home({ list }) {
 }
 
 export async function getStaticProps() {
-  const data = await fetch(`${url}/api/articles`);
+  const data = await fetch(`${url}/api/articles`, {
+    headers: {
+      Authorization:
+      `Bearer ${apiToken}`,
+    },
+  });
   const list = await data.json();
 
   console.log('list: ', list.data)
