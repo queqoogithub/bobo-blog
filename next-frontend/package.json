@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@ckeditor/ckeditor5-react": "^5.0.2",
+    "@headlessui/react": "^1.6.6",
     "html-to-react": "^1.5.0",
     "next": "12.2.5",
     "react": "18.2.0",

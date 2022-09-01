@@ -3,10 +3,14 @@ export default function About({ data }) {
   console.log(data);
 
   return (
-    <div className="grid place-items-center h-screen p-4 text-justify">
+
+    <div className="grid place-items-center h-screen p-4 text-justify text-[12px]">
       <h1 className="text-2xl">About Me</h1>
       <p className="text-[94px]">🦸‍♂️</p>
-      {data.attributes.Body}
+      <div>{data.attributes.Body}</div>
+      {/* <div 
+          dangerouslySetInnerHTML={{__html: data.attributes.Body}}
+      /> */}
       <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
     </div>
   );
