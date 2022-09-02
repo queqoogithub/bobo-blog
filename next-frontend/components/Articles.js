@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { url, apiToken } from "../config/next.config";
+import { url } from "../config/next.config";
 
 const Articles = ({ list, loading }) => {
   if (loading) {
@@ -11,11 +11,12 @@ const Articles = ({ list, loading }) => {
     <div>
       <ul>
         {list.map((item) => (
-          <li key={item.id} className='mb-3'>
+          <li key={item.id} className='p-4 max-w-sm mx-auto bg-white rounded-xl shadow-lg flex items-center space-x-4 mb-2 w-80'>
             <Link href={`/article/${item.id}`}>
               <a>
-                <div className="text-[20px]">{item.attributes.Title}</div>
-                <img src={ url + item.attributes.Cover.data.attributes.url } />
+                <div className="mb-2 text-[16px] text-justify">{item.attributes.Title}</div>
+                <div className="mb-2 text-[14px] "> ⭐️ {item.attributes.Tag}</div>
+                <img className="object-fill h-38 w-72" src={ url + item.attributes.Cover.data.attributes.url } />
               </a>
             </Link>
           </li>

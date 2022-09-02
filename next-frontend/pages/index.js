@@ -26,7 +26,6 @@ export default function Home({ list }) {
       <Head>
         <title>Home</title>
       </Head>
-      <h1>Welcome home!</h1>
       {/* <ul>
         {list.map((item) => (
           <li key={item.id} className='mb-3'>
@@ -39,7 +38,8 @@ export default function Home({ list }) {
           </li>
         ))}
       </ul> */}
-      <div className="grid place-items-center h-screen">
+      <div className="grid grid-cols-1 gap-4 place-items-center ">
+      {/* <div className="grid place-items-center h-screen"> */}
         <Articles list={currentList}/>
         <Pagination
           postsPerPage={postsPerPage}

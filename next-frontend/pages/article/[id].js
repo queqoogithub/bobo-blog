@@ -7,13 +7,13 @@ export default function Article({ article }) {
   // Todo => Give me a cup of coffee ☕️ 
   return (
     <Layout title="Article Page">
-      <div className="grid place-items-center h-screen">
-        <h1 className="text-3xl font-bold underline">{article.attributes.Title}</h1>
+      <div className="grid grid-cols-1 gap-4 place-items-center ">
+        <h1 className="text-white text-[20px] font-bold text-center">{article.attributes.Title}</h1>
         {/* <div><ReactMarkdown>{article.attributes.Body}</ReactMarkdown></div> */}
-        <h3>---------</h3>
-        <div className="place-self-start mt-5 md:mb-5"><p className="text-[12px]">Publish at: {(article.attributes.publishedAt).slice(0, 10)}</p></div>
+        <h3 className="text-white text-[25px]">🙄 🙄 🙄</h3>
+        <div className="text-white place-self-start mt-5 md:place-self-center md:mb-5 "><p className="text-[12px]">Publish at: {(article.attributes.publishedAt).slice(0, 10)}</p></div>
         <div>
-          <div className="grid place-items-center h-screen text-justify text-[13px] md:text-[16px] gap-y-4"
+          <div className="grid place-items-center text-justify text-[13px] md:text-[16px] gap-y-4 text-white"
             dangerouslySetInnerHTML={{__html: article.attributes.Body}}
           />
         </div>
