@@ -8,44 +8,50 @@ export default function Pagination({
   currentPage,
 }) {
 
+const maxPage = Math.ceil(totalPosts / postsPerPage) // หารปัดเศษขึ้น
+
 return (
     <div className='py-2'>
-      <div>
+      {/* <div>
         <p className='text-sm text-gray-700'>
           Showing
-          <span className='font-medium'>{currentPage * postsPerPage - 10}</span>
+          <span className='font-medium'> {currentPage * postsPerPage - postsPerPage} </span>
           to
           <span className='font-medium'> {currentPage * postsPerPage} </span>
           of
           <span className='font-medium'> {totalPosts} </span>
           results
         </p>
-      </div>
-      <nav className='block'></nav>
+      </div> */}
+      
       <div>
         <nav
           className='relative z-0 inline-flex rounded-md shadow-sm -space-x-px'
           aria-label='Pagination'
         >
-          <a
-            onClick={() => {
-              paginateBack();
-            }}
-            href='#'
-            className='relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50'
-          >
-            <span>Previous</span>
-          </a>
+          { currentPage == 1? <span className='relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50'>Prev</span>:
+            <a
+              onClick={() => {
+                paginateBack();
+              }}
+              href='#'
+              className='relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50'
+            >
+              <span>Prev</span>
+            </a>
+          }
 
-          <a
-            onClick={() => {
-              paginateFront();
-            }}
-            href='#'
-            className='relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50'
-          >
-            <span>Next</span>
-          </a>
+          { currentPage == maxPage? <span className='relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50'>Next</span>:
+            <a
+              onClick={() => {
+                paginateFront();
+              }}
+              href='#'
+              className='relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50'
+            >
+              <span>Next</span>
+            </a>
+          }
         </nav>
       </div>
     </div>

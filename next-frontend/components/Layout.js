@@ -10,11 +10,11 @@ export default function Layout({ title, children }) {
                 <meta name="description" content="Tech Blog" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <div className="flex min-h-screen flex-col justify-between ">
-                <main className="container m-auto mt-4 px-4">{children}</main>
-                <footer className="flex h-10 justify-center items-center shadow-inner">
-                    <p>Copyright © 2022 Bobo Tech</p>
-                </footer>
+            <div className="flex min-h-screen flex-col justify-between">
+                <main className="container m-auto mt-4 px-4 mb-10">{children}</main>
+                {/* <footer className="flex h-10 justify-center items-center shadow-inner mt-40">
+                    <p>Copyright © 2022 Bobo-Tech</p>
+                </footer> */}
             </div>
         </>
     )
