@@ -9,7 +9,7 @@ export default function About({ data }) {
     <Layout title="About Page">
       <div className="grid grid-cols-1 gap-4 place-items-center p-4 text-white">
         <h1 className="text-2xl font-bold">About Me</h1>
-        <p className="text-[96px]">👨‍🚀</p>
+        <p className="text-[96px] hover:text-[104px]">👨‍🚀</p>
         <div className="text-[13px] md:text-[16px] text-justify mb-8">{data.attributes.Body}</div>
         {/* <div 
             dangerouslySetInnerHTML={{__html: data.attributes.Body}}
