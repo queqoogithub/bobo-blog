@@ -9,7 +9,7 @@ import Pagination from "../components/Pagination";
 export default function Home({ list }) {
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(4);
-  console.log(list);
+  //console.log(list);
 
   // Get current list
   const indexOfLastPost = currentPage * postsPerPage;

@@ -1,7 +1,7 @@
 import { url, apiToken } from "../../config/next.config";
 import ReactMarkdown from "react-markdown";
 import Layout from '../../components/Layout';
-
+import BuyMeCoffee from "../../components/BuyMeCoffee";
 
 export default function Article({ article }) {
   // Todo => Give me a cup of coffee ☕️ 
@@ -17,6 +17,7 @@ export default function Article({ article }) {
             dangerouslySetInnerHTML={{__html: article.attributes.Body}}
           />
         </div>
+        <BuyMeCoffee />
       </div>
     </Layout>
   );
